@@ -1,13 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Comforter} from "next/font/google";
 import { AntdRegistry } from '@ant-design/nextjs-registry';
+import Link from "next/link";
 import "./globals.css";
-
-const comforter = Comforter({
-  variable: "--font-comforter",
-  subsets: ["latin"],
-  weight: "400",
-});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,16 +10,28 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  anther,
+  team
 }: Readonly<{
   children: React.ReactNode;
+  anther: React.ReactNode;
+  team: React.ReactNode;
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${comforter.variable} antialiased`}
-      >
-
-        <AntdRegistry> {children}</AntdRegistry>
+      <body className="antialiased">
+        <AntdRegistry> 
+          <div className="flex justify-center gap-6">
+              <Link href='/'>home</Link>
+              <Link href='/visitors'>visitors</Link>
+          </div>
+          <div className="flex justify-center gap-6">
+            {team}
+            {anther}
+          </div>
+          {children}
+        
+          </AntdRegistry>
       </body>
     </html>
   );
