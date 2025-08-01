@@ -9,7 +9,7 @@ export const metadata : Metadata = {
 export default function Scale() {
   return (
     <div>
-      <MainContent imageSrc={image4} desTxt='Scale 坚持✊' altText='Scale alt'/>
+      <MainContent imageSrc={image4} desTxt='Scale 坚持 坚持 坚持✊' altText='Scale alt'/>
     </div>
   )
 }
